@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qué hacemos</title>
+    <style>
+        /* Estilos CSS para el diseño */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            display: flex; /* Usando flexbox */
+            flex-direction: column; /* Apilando elementos verticalmente */
+            align-items: center; /* Centrando horizontalmente */
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .banner-image {
+            width: 100%; /* Ancho completo */
+            max-width: 100%; /* Ancho máximo */
+            height: auto; /* Altura automática para mantener la proporción */
+            display: block; /* Evitar espacios adicionales */
+            margin-bottom: 20px; /* Espacio inferior */
+            border-radius: 10px; /* Borde redondeado */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .images-container {
+            display: flex; /* Usando flexbox */
+            justify-content: center; /* Centrando horizontalmente */
+            gap: 20px; /* Espacio entre las imágenes */
+            margin-bottom: 20px; /* Espacio inferior */
+        }
+        .images-container img {
+            max-width: 45%; /* Ancho máximo del 45% para cada imagen */
+            border-radius: 10px; /* Borde redondeado */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .banner-text {
+            position: absolute; /* Posición absoluta */
+            top: 50%; /* Colocar en la mitad superior */
+            left: 50%; /* Colocar en la mitad izquierda */
+            transform: translate(-50%, -50%); /* Centrar vertical y horizontalmente */
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 10px; /* Borde redondeado */
+            max-width: 80%; /* Ancho máximo */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="banner.jpg" alt="Banner" class="banner-image">
+        <div class="images-container">
+        <img src="instalacion.jpg" alt="Descripción de la primera imagen">
+        <img src="amortiguadores1.jpg" alt="Descripción de la segunda imagen">
+        </div>
+        <div class="banner-text">
+            <h1>Qué hacemos</h1>
+            <p>Reparamos, instalamos, levantamos, achaparramos, reforzamos o suavizamos su automóvil.</p>
+            <p>Hacemos reparaciones de amortiguadores, cambio de rótulas, bujes de horquilla, soportes, gomas de barra estabilizadora, tornillos estabilizadores, terminales de dirección, resortes, etc.</p>
+        </div>
+    </div>
+</body>
+</html>

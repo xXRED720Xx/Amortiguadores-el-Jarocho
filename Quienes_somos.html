@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quienes somos?</title>
+<style>
+  /* Estilos para el fondo */
+  body {
+    background-image: url('C.jpg');
+    background-size: cover; /* Para cubrir toda la pantalla */
+    background-repeat: no-repeat; /* Para que la imagen no se repita */
+    background-attachment: fixed; /* Para que la imagen de fondo no se desplace al hacer scroll */
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina los rellenos predeterminados */
+  }
+
+  /* Estilos para el carrusel */
+  .carousel-item {
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex; /* Para centrar contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .carousel-content {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  /* Estilos para el título */
+  .carousel-title {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+  }
+  /* Estilos para el contexto */
+  .carousel-context {
+    font-size: 1.2em;
+    width: 100%; /* Cambiado el ancho al 100% */
+    position: absolute; /* Cambiado a posición absoluta */
+    bottom: 0; /* Alineado al fondo */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-left: 2px solid #ccc;
+  }
+</style>
+</head>
+<body>
+<h1 class="carousel-title">Quienes somos?</h1>
+<div class="carousel">
+  <div class="carousel-content">
+    <div class="carousel-item"><img src="logotaller.jpg" alt="Imagen 1"></div>
+    <div class="carousel-item"><img src="2009.jpg" alt="Imagen 2"></div>
+    <div class="carousel-item"><img src="2014.jpg" alt="Imagen 3"></div>
+    <div class="carousel-item"><img src="2015.jpg" alt="Imagen 4"></div>
+    <div class="carousel-item"><img src="2022.jpg" alt="Imagen 5"></div>
+    <div class="carousel-item"><img src="2024.jpg" alt="Imagen 6"></div>
+
+  </div>
+</div>
+<div class="carousel-context">
+  <p>Somos especialistas en reparación e instalación de amortiguadores para todo tipo de vehiculos nacionales e importados, con más de 30 años de experiencia en el ramo.</p>
+</div>
+
+<script>
+  // Script para el funcionamiento del carrusel
+  const carousel = document.querySelector('.carousel');
+  const carouselContent = document.querySelector('.carousel-content');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  
+  let currentIndex = 0;
+  
+  function nextSlide() {
+    if (currentIndex < carouselItems.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateCarousel();
+  }
+  
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = carouselItems.length - 1;
+    }
+    updateCarousel();
+  }
+  
+  function updateCarousel() {
+    const itemWidth = carouselItems[currentIndex].offsetWidth;
+    carouselContent.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  }
+  
+  setInterval(nextSlide, 3000); // Cambiar de imagen cada 3 segundos
+</script>
+</body>
+</html>

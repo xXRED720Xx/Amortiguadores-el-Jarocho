@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador de Amortiguadores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #202020; /* Cambio de color de fondo a negro */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Para centrar el contenido */
+            justify-content: center; /* Para centrar el contenido */
+            align-items: center; /* Para centrar el contenido */
+            height: 100vh; /* Para centrar el contenido */
+        }
+
+        #containerSearch {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+        }
+
+        h2.titleSearch {
+            color: #333;
+            text-align: center;
+        }
+
+        .searcher, #searchInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 32.5%;
+            padding: 10px;
+            background-color: #05B66B;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        
+        }
+
+        button:hover {
+            background-color: #199D65;
+        }
+
+        #selections {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            color: #B60505;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            bacground-color: #f0f0f0;
+
+        }
+    </style>
+</head>
+<body>
+<div id="containerSearch" style="display: block;">
+    <h2 class="titleSearch">Cotiza los Amortiguadores de tu carro</h2>
+
+    <form id="form" action="/page.fiveStepsResults" method="post" name="searchForm">
+        <input type="text" id="name" class="searcher" name="name" placeholder="Nombre Cliente" required="">
+        <input type="tel" id="phone" class="searcher" name="phone" placeholder="Teléfono" required="">
+
+        <select id="year" class="searcher" name="year" required="">
+            <option disabled="" selected="selected">Año</option>
+<option value="0">2024</option>
+<option value="1">2023</option>
+<option value="2">2022</option>
+<option value="3">2021</option>
+<option value="4">2020</option>
+<option value="5">2019</option>
+<option value="6">2018</option>
+<option value="7">2017</option>
+<option value="8">2016</option>
+<option value="9">2015</option>
+<option value="10">2014</option>
+<option value="11">2013</option>
+<option value="12">2012</option>
+<option value="13">2011</option>
+<option value="14">2010</option>
+<option value="15">2009</option>
+<option value="16">2008</option>
+<option value="17">2007</option>
+<option value="18">2006</option>
+<option value="19">2005</option>
+<option value="20">2004</option>
+<option value="21">2003</option>
+<option value="22">2002</option>
+<option value="23">2001</option>
+<option value="24">2000</option>
+<option value="25">1999</option>
+<option value="26">1998</option>
+<option value="27">1997</option>
+<option value="28">1996</option>
+<option value="29">1995</option>
+<option value="30">1994</option>
+<option value="31">1993</option>
+<option value="32">1992</option>
+<option value="33">1991</option>
+<option value="34">1990</option>
+<option value="35">1989</option>
+<option value="36">1988</option>
+<option value="37">1987</option>
+<option value="38">1986</option>
+<option value="39">1985</option>
+<option value="40">1984</option>
+<option value="41">1983</option>
+<option value="42">1982</option>
+<option value="43">1981</option>
+<option value="44">1980</option>
+<option value="45">1979</option>
+<option value="46">1978</option>
+<option value="47">1977</option>
+<option value="48">1976</option>
+<option value="49">1975</option></select> 
+        </select>
+
+        <select id="make" class="searcher" name="make" required="">
+            <option disabled="" selected="selected">Marca</option>
+<option value="acura">acura</option>
+<option value="alfa romeo">alfa romeo</option>
+<option value="audi">audi</option>
+<option value="baic">baic</option>
+<option value="blue bird">blue bird</option>
+<option value="bmw">bmw</option>
+<option value="cadillac">cadillac</option>
+<option value="changan">changan</option>
+<option value="chevrolet">chevrolet</option>
+<option value="dodge">dodge</option>
+<option value="fiat">fiat</option>
+<option value="fisker">fisker</option>
+<option value="ford">ford</option>
+<option value="freightliner">freightliner</option>
+<option value="genesis">genesis</option>
+<option value="honda">honda</option>
+<option value="hyundai">hyundai</option>
+<option value="ic corporation">ic corporation</option>
+<option value="infiniti">infiniti</option>
+<option value="jaguar">jaguar</option>
+<option value="karma">karma</option>
+<option value="kia">kia</option>
+<option value="lexus">lexus</option>
+<option value="lucid">lucid</option>
+<option value="maserati">maserati</option>
+<option value="mazda">mazda</option>
+<option value="mercedes-benz">mercedes-benz</option>
+<option value="mg">mg</option>
+<option value="mini">mini</option>
+<option value="mitsubishi">mitsubishi</option>
+<option value="nissan">nissan</option>
+<option value="peugeot">peugeot</option>
+<option value="polestar">polestar</option>
+<option value="renault">renault</option>
+<option value="rivian">rivian</option>
+<option value="subaru">subaru</option>
+<option value="toyota">toyota</option>
+<option value="volkswagen">volkswagen</option></select>
+        </select>
+
+        <input type="text" id="searchInput" name="model" placeholder="Modelo">
+
+        <select id="pack" class="searcher" name="Paquete de Amortiguadores" required="" data-gtm-form-interact-field-id="2">
+            <option disabled="" selected="selected">Paquete de Amortiguadores</option>
+            <option value="Paquete de los 4 Amortiguadores">Paquete de los 4 Amortiguadores</option>
+            <option value="Paquete de los 2 delanteros">Paquete de los 2 delanteros</option>
+            <option value="Paquete de los 2 Traceros">Paquete de los 2 Traceros</option>
+        </select>
+    <!-- Botones y formulario -->
+    <div class="buttons-container">
+        <button type="button" onclick="mostrarCotizacion()">Cotizar</button>
+        <button type="button" onclick="generarImprimir()">Imprimir</button>
+        <button type="button" onclick="limpiarFormulario()">Limpiar</button>
+    </div>
+
+    <!-- Resultado de cotización y factura -->
+    <div id="selections" style="margin-top: 10px;"></div>
+    <div id="result" style="margin-top: 10px;"></div>
+
+</div>
+<script>
+    var precios = {
+    "acura_Paquete de los 4 Amortiguadores": 4960,
+    "acura_Paquete de los 2 delanteros": 2530,
+    "acura_Paquete de los 2 Traceros": 2500,
+    "alfa romeo_Paquete de los 4 Amortiguadores": 3900,
+    "alfa romeo_Paquete de los 2 delanteros": 1470,
+    "alfa romeo_Paquete de los 2 Traceros": 2500,
+    "audi_Paquete de los 4 Amortiguadores": 4900,
+    "audi_Paquete de los 2 delanteros": 2480,
+    "audi_Paquete de los 2 Traceros": 2490,
+    "baic_Paquete de los 4 Amortiguadores": 2000,
+    "baic_Paquete de los 2 delanteros": 950,
+    "baic_Paquete de los 2 Traceros": 1000,
+    "blue bird_Paquete de los 4 Amortiguadores": 3200,
+    "blue bird_Paquete de los 2 delanteros": 1470,
+    "blue bird_Paquete de los 2 Traceros": 1750,
+    "bmw_Paquete de los 4 Amortiguadores": 5000,
+    "bmw_Paquete de los 2 delanteros": 2500,
+    "bmw_Paquete de los 2 Traceros": 3000,
+    "cadillac_Paquete de los 4 Amortiguadores": 2000,
+    "cadillac_Paquete de los 2 delanteros": 1200,
+    "cadillac_Paquete de los 2 Traceros": 900,
+    "changan_Paquete de los 4 Amortiguadores": 3600,
+    "changan_Paquete de los 2 delanteros": 1440,
+    "changan_Paquete de los 2 Traceros": 2100,
+    "chevrolet_Paquete de los 4 Amortiguadores": 2100,
+    "chevrolet_Paquete de los 2 delanteros": 850,
+    "chevrolet_Paquete de los 2 Traceros": 1250,
+    "dodge_Paquete de los 4 Amortiguadores": 3700,
+    "dodge_Paquete de los 2 delanteros": 1500,
+    "dodge_Paquete de los 2 Traceros": 2200,
+    "fiat_Paquete de los 4 Amortiguadores": 2700,
+    "fiat_Paquete de los 2 delanteros": 1000,
+    "fiat_Paquete de los 2 Traceros": 1700,
+    "fisker_Paquete de los 4 Amortiguadores": 2200,
+    "fisker_Paquete de los 2 delanteros": 750,
+    "fisker_Paquete de los 2 Traceros": 1500,
+    "ford_Paquete de los 4 Amortiguadores": 2250,
+    "ford_Paquete de los 2 delanteros": 1100,
+    "ford_Paquete de los 2 Traceros": 1250,
+    "freightliner_Paquete de los 4 Amortiguadores": 1800,
+    "freightliner_Paquete de los 2 delanteros": 900,
+    "freightliner_Paquete de los 2 Traceros": 1000,
+    "genesis_Paquete de los 4 Amortiguadores": 1500,
+    "genesis_Paquete de los 2 delanteros": 750,
+    "genesis_Paquete de los 2 Traceros": 800,
+    "honda_Paquete de los 4 Amortiguadores": 1300,
+    "honda_Paquete de los 2 delanteros": 650,
+    "honda_Paquete de los 2 Traceros": 750,
+    "hyundai_Paquete de los 4 Amortiguadores": 2300,
+    "hyundai_Paquete de los 2 delanteros": 1000,
+    "hyundai_Paquete de los 2 Traceros": 1350,
+    "ic corporation_Paquete de los 4 Amortiguadores": 2500,
+    "ic corporation_Paquete de los 2 delanteros": 1250,
+    "ic corporation_Paquete de los 2 Traceros": 1300,
+    "infiniti_Paquete de los 4 Amortiguadores": 2600,
+    "infiniti_Paquete de los 2 delanteros": 1200,
+    "infiniti_Paquete de los 2 Traceros": 1400,
+    "jaguar_Paquete de los 4 Amortiguadores": 1500,
+    "jaguar_Paquete de los 2 delanteros": 700,
+    "jaguar_Paquete de los 2 Traceros": 800,
+    "karma_Paquete de los 4 Amortiguadores": 1250,
+    "karma_Paquete de los 2 delanteros": 550,
+    "karma_Paquete de los 2 Traceros": 700,
+    "kia_Paquete de los 4 Amortiguadores": 3000,
+    "kia_Paquete de los 2 delanteros": 1450,
+    "kia_Paquete de los 2 Traceros": 1550,
+    "lexus_Paquete de los 4 Amortiguadores": 1450,
+    "lexus_Paquete de los 2 delanteros": 700,
+    "lexus_Paquete de los 2 Traceros": 750,
+    "lucid_Paquete de los 4 Amortiguadores": 1300,
+    "lucid_Paquete de los 2 delanteros": 550,
+    "lucid_Paquete de los 2 Traceros": 840,
+    "maserati_Paquete de los 4 Amortiguadores": 5000,
+    "maserati_Paquete de los 2 delanteros": 2450,
+    "maserati_Paquete de los 2 Traceros": 2600,
+    "mazda_Paquete de los 4 Amortiguadores": 2600,
+    "mazda_Paquete de los 2 delanteros": 1100,
+    "mazda_Paquete de los 2 Traceros": 1500,
+    "mercedes-benz_Paquete de los 4 Amortiguadores": 4500,
+    "mercedes-benz_Paquete de los 2 delanteros": 2150,
+    "mercedes-benz_Paquete de los 2 Traceros": 2350,
+    "mg_Paquete de los 4 Amortiguadores": 5500,
+    "mg_Paquete de los 2 delanteros": 2500,
+    "mg_Paquete de los 2 Traceros": 3000,
+    "mini_Paquete de los 4 Amortiguadores": 1100,
+    "mini_Paquete de los 2 delanteros": 550,
+    "mini_Paquete de los 2 Traceros": 600,
+    "mitsubishi_Paquete de los 4 Amortiguadores": 1700,
+    "mitsubishi_Paquete de los 2 delanteros": 800,
+    "mitsubishi_Paquete de los 2 Traceros": 900,
+    "nissan_Paquete de los 4 Amortiguadores": 1650,
+    "nissan_Paquete de los 2 delanteros": 850,
+    "nissan_Paquete de los 2 Traceros": 800,
+    "peugeot_Paquete de los 4 Amortiguadores": 1500,
+    "peugeot_Paquete de los 2 delanteros": 700,
+    "peugeot_Paquete de los 2 Traceros": 800,
+    "polestar_Paquete de los 4 Amortiguadores": 2000,
+    "polestar_Paquete de los 2 delanteros": 1000,
+    "polestar_Paquete de los 2 Traceros": 1000,
+    "renault_Paquete de los 4 Amortiguadores": 2100,
+    "renault_Paquete de los 2 delanteros": 950,
+    "renault_Paquete de los 2 Traceros": 1150,
+    "rivian_Paquete de los 4 Amortiguadores": 1500,
+    "rivian_Paquete de los 2 delanteros": 650,
+    "rivian_Paquete de los 2 Traceros": 900,
+    "subaru_Paquete de los 4 Amortiguadores": 2300,
+    "subaru_Paquete de los 2 delanteros": 1060,
+    "subaru_Paquete de los 2 Traceros": 1240,
+    "toyota_Paquete de los 4 Amortiguadores": 3500,
+    "toyota_Paquete de los 2 delanteros": 1700,
+    "toyota_Paquete de los 2 Traceros": 1800,
+    "volkswagen_Paquete de los 4 Amortiguadores": 2100,
+    "volkswagen_Paquete de los 2 delanteros": 1050,
+    "volkswagen_Paquete de los 2 Traceros": 1050,
+    };
+    function mostrarCotizacion() {
+        var marca = document.getElementById('make').value;
+        var paquete = document.getElementById('pack').value;
+
+        // Obtener el precio correspondiente a la combinación de marca y paquete
+        var precio = precios[marca + "_" + paquete];
+
+        if (precio !== undefined) {
+            var cotizacionTexto = "<strong>La cotización de " + marca + " " + paquete + " es de: $" + precio + " pesos ya instalados</strong>";
+
+        document.getElementById('selections').innerHTML = cotizacionTexto; 
+    } else {
+            document.getElementById('selections').innerHTML = "<strong>ERROR EN LA COTIZACIÓN</strong><br>Por favor complete todos los campos.";
+        }
+    }
+function generarImprimir() {
+
+    var nombre = document.getElementsByName('name')[0].value;
+    var telefono = document.getElementsByName('phone')[0].value;
+
+    var marca = document.getElementById('make').value;
+    var paquete = document.getElementById('pack').value;
+    var precio = precios[marca + "_" + paquete];
+
+    if (precio !== undefined) {
+        // Obtener la fecha de hoy
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // Enero es 0!
+        var yyyy = today.getFullYear();
+
+        today = dd + '/' + mm + '/' + yyyy;
+
+        var resultado = "<div id='result' style='margin-top: 10px;'>";
+        resultado += "<p>Detalles de la Cotizacion " + today + "</p>";
+        resultado += "<p>Nombre del Cliente: " + nombre + "</p>";
+        resultado += "<p>Teléfono: " + telefono + "</p>";
+        resultado += "<p>Marca del coche: " + marca + "</p>";
+        resultado += "<p>" + paquete + "</p>";
+        resultado += "<p>Total: $" + precio + " pesos ya instalados</p>";
+        resultado += "<button onclick='window.print()'>Imprimir</button>"; // Agregar el botón de imprimir
+        resultado += "</div>";
+       
+
+        var container = document.getElementById('containerSearch');
+        container.innerHTML = resultado;
+
+        // Mostrar solo el recuadro de resultados de la factura y el botón de limpiar
+        container.style.display = "block";
+
+        // Ocultar los otros elementos
+        document.getElementById('selections').style.display = "none";
+        document.getElementById('form').style.display = "none";
+
+        document.getElementById('printButton').style.display = 'block';
+    } else {
+        document.getElementById('result').innerHTML = "<strong>ERROR EN LA IMPRESIÓN</strong><br>Por favor complete todos los campos.";
+    }
+
+}
+
+    function limpiarFormulario() {
+        
+        document.body.style.background = "#202020";  
+        document.getElementById('form').reset();
+        document.getElementById('selections').innerHTML = "";
+        document.getElementById('result').innerHTML = "";
+
+}
+
+</script>
+</body>
+</html>
