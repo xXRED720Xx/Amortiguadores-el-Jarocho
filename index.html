@@ -56,12 +56,15 @@
         }
         .carousel-inner img {
             width: 100%;
-            height: auto; /* Para mantener la proporción de las imágenes */
+            height: 300px; /* Establece una altura fija para las imágenes en dispositivos móviles */
             object-fit: cover; /* Para ajustar el tamaño de las imágenes sin distorsión */
         }
-        @media (max-width: 767px) {
+        @media (min-width: 768px) {
             .carousel-inner img {
-                height: 300px; /* Establece la altura fija de las imágenes en dispositivos móviles */
+                height: 400px; /* Mantiene la altura de las imágenes en pantallas más grandes */
+            }
+            section {
+                margin: 20px 10%; /* Centra el contenido con un margen izquierdo y derecho del 10% */
             }
         }
     </style>
