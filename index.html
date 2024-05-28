@@ -59,12 +59,9 @@
             height: auto; /* Para mantener la proporción de las imágenes */
             object-fit: cover; /* Para ajustar el tamaño de las imágenes sin distorsión */
         }
-        @media (min-width: 768px) {
+        @media (max-width: 767px) {
             .carousel-inner img {
-                height: 400px; /* Reduce la altura de las imágenes en pantallas más grandes */
-            }
-            section {
-                margin: 20px 10%; /* Centra el contenido con un margen izquierdo y derecho del 10% */
+                height: 300px; /* Establece la altura fija de las imágenes en dispositivos móviles */
             }
         }
     </style>
@@ -117,8 +114,3 @@
     </footer>
 </body>
 </html>
-
-
-
-
-
